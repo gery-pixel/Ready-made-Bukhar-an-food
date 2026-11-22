@@ -176,6 +176,7 @@
     });
     msg.push("");
     msg.push("*סה\"כ לתשלום: " + shekel(total) + "* (משלוח חינם)");
+    if (S.paymentMethods) msg.push("תשלום: " + S.paymentMethods);
     msg.push("");
     msg.push("*פרטי הלקוח:*");
     msg.push("שם: " + get("name"));
@@ -189,6 +190,11 @@
 
   /* ---------- Init ---------- */
   renderMenu();
+  if (S.paymentMethods) {
+    $("payment-note").textContent = "התשלום ב" + S.paymentMethods + " ל" + S.ownerName + ", לאחר אישור ההזמנה.";
+  } else {
+    $("payment-note").hidden = true;
+  }
   updateSummary();
   applyLock();
   setInterval(applyLock, 30000);

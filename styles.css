@@ -125,6 +125,7 @@ main { max-width: 640px; margin: 0 auto; padding: 0 16px; }
 .row { display: flex; justify-content: space-between; padding: 6px 0; }
 .row.total { font-size: 1.2rem; font-weight: 800; color: var(--burgundy); border-top: 2px solid var(--gold); margin-top: 4px; padding-top: 10px; }
 .free { color: var(--green-dark); font-weight: 700; }
+.payment-note { color: var(--muted); font-size: .88rem; margin: 6px 0 0; }
 .muted { color: var(--muted); margin: 0 0 6px; }
 
 /* Form */
