@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7a1424">
+  <title>התפריט הבוכרי – הזמנה במשלוח</title>
+  <meta name="description" content="אוכל בוכרי ביתי עד הבית – ללא דמי משלוח. בהשגחת בד&quot;ץ בית יוסף.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="kashrut">✡ בהשגחת בד"ץ בית יוסף</div>
+    <h1>התפריט הבוכרי מגיע עד הבית<br><span>ללא דמי משלוח!</span></h1>
+    <div class="promo">🎉 מבצע השקה: מבחר מאפים ב-₪13 בלבד!</div>
+    <p class="schedule">הזמנות עד יום רביעי ב-20:00 · משלוחים ביום חמישי</p>
+  </header>
+
+  <div id="closed-banner" class="closed-banner" hidden></div>
+
+  <main>
+    <div id="menu"></div>
+
+    <section class="card summary" id="summary">
+      <h2>סיכום הזמנה</h2>
+      <ul id="summary-list" class="summary-list"></ul>
+      <p id="summary-empty" class="muted">עדיין לא נבחרו מנות.</p>
+      <div class="row"><span>משלוח</span><span class="free">חינם</span></div>
+      <div class="row total"><span>סה"כ לתשלום</span><span id="total">₪0</span></div>
+    </section>
+
+    <form class="card form" id="order-form" novalidate>
+      <h2>פרטים למשלוח</h2>
+      <label>שם פרטי ושם משפחה *
+        <input name="name" autocomplete="name" required>
+      </label>
+      <label>טלפון נייד *
+        <input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="05X-XXXXXXX" required>
+      </label>
+      <label>עיר *
+        <input name="city" autocomplete="address-level2" required>
+      </label>
+      <div class="two">
+        <label>רחוב *
+          <input name="street" autocomplete="address-line1" required>
+        </label>
+        <label>מס' בניין *
+          <input name="building" inputmode="numeric" required>
+        </label>
+      </div>
+      <label>הערות להזמנה
+        <textarea name="notes" rows="3" placeholder="קומה, דירה, קוד כניסה, בקשות מיוחדות..."></textarea>
+      </label>
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <button type="submit" id="send-btn" class="wa-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-6.9-6c-.5-.7-1.2-1.9-1.2-3.2 0-1.2.6-1.9 1-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.5Z"/></svg>
+        <span id="send-label">שלח הזמנה בוואטסאפ</span>
+      </button>
+    </form>
+  </main>
+
+  <footer>תודה שבחרתם בנו · בתיאבון! 🧡</footer>
+
+  <div class="sticky-bar" id="sticky-bar" hidden>
+    <span><b id="sticky-count">0</b> פריטים · <b id="sticky-total">₪0</b></span>
+    <a href="#summary">להשלמת ההזמנה ←</a>
+  </div>
+
+  <script src="menu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
